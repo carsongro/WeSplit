@@ -15,6 +15,7 @@ struct ContentView: View {
     
     let tipPercentages = [10, 15, 20, 25, 0]
     
+    
     var totalPerPerson: Double {
         let peopleCount = Double(numberOfPeople + 2)
         let tipSelection = Double(tipPercentage)
@@ -35,7 +36,7 @@ struct ContentView: View {
     }
     
     var dollarFormat: FloatingPointFormatStyle<Double>.Currency {
-       let currencyCode = Locale.current.currencyCode ?? "USD"
+        let currencyCode = Locale.current.currencyCode ?? "USD"
         return FloatingPointFormatStyle<Double>.Currency(code: currencyCode)
     }
     
@@ -72,11 +73,14 @@ struct ContentView: View {
                 
                 Section {
                     Text(totalAmount, format: dollarFormat)
+                        .foregroundColor(tipPercentage == 0 ? .red : .primary)
                 } header: {
                     Text("Total amount")
                 }
             }
             .navigationTitle("WeSplit")
+            
+            
             .toolbar {
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()

@@ -1,1 +1,1 @@
-This is the first IOS app From 100 Days of Swift, works well :)
+WeSplit allows the user to calculate how to properly split a check at a restaurant (with a tip)!
